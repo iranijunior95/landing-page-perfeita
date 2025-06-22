@@ -97,3 +97,112 @@ nav .link-logo {
     display: flex;
     gap: 1rem;
 }
+
+.btn-mobile {
+    display: none;
+}
+
+.menu-mobile {
+    display: flex;
+    min-height: calc(100dvh - 69px);
+    width: 100%;
+    position: fixed;
+    right: 0;
+    top: 69px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.menu-mobile-container {
+    min-height: calc(100dvh - 69px);
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #FFFFFF;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-mobile-container > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-mobile-container > ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111111;
+}
+
+.button-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media screen and (width < 940px) {
+    header {
+        padding: 16px 60px;
+    }
+
+}
+
+@media screen and (width < 850px) {
+    .menu-left {
+        display: none;
+    }
+
+    .btn-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background: transparent;
+        padding: 6px 0;
+    }
+
+    .btn-mobile > img {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+    }
+
+    .menu-mobile.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-mobile-container.active {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (width < 660px) {
+    .menu-mobile-container {
+        width: 50%;
+    }
+}
+
+@media screen and (width < 420px) {
+    header {
+        padding: 16px 30px;
+    }
+
+    .menu-mobile-container {
+        width: 60%;
+    }
+}
